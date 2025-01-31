@@ -118,12 +118,6 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-## ❤️ **Acknowledgments**
-
-💡 Special thanks to **Mehran University** & the open-source community!
-
----
-
 <div align="center">
   <p>🚀 Built with ❤️ for MUET Students 🎓</p>
 </div>
