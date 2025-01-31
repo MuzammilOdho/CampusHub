@@ -107,8 +107,8 @@ It’s like a **sharing economy** inside your campus! 🎒📚
 
 Want to improve **Campus Hub**? 🎉 Contributions are welcome! Submit a **Pull Request** or open an **Issue**.
 
-📌 **Report a Bug** → [GitHub Issues](https://github.com/yourusername/campushub/issues)  
-📌 **Request a Feature** → [Feature Requests](https://github.com/yourusername/campushub/issues)
+📌 **Report a Bug** → [GitHub Issues](https://github.com/muzammilodho/campushub/issues)  
+📌 **Request a Feature** → [Feature Requests](https://github.com/muzammilodho/campushub/issues)
 
 ---
 
