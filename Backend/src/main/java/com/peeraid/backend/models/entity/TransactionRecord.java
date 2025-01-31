@@ -16,7 +16,7 @@ public class TransactionRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "resourceId", nullable = false)
     Resource borrowedResource;
 

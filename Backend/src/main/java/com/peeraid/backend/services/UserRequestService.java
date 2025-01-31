@@ -2,9 +2,11 @@ package com.peeraid.backend.services;
 
 import com.peeraid.backend.Repository.ResourceRepo;
 import com.peeraid.backend.Repository.UserRequestRepo;
+import com.peeraid.backend.dto.TransactionRecordDto;
 import com.peeraid.backend.dto.UserRequestDto;
 import com.peeraid.backend.mapper.UserRequestMapper;
 import com.peeraid.backend.models.entity.Resource;
+import com.peeraid.backend.models.entity.TransactionRecord;
 import com.peeraid.backend.models.entity.User;
 import com.peeraid.backend.models.entity.UserRequest;
 import com.peeraid.backend.models.enums.*;
@@ -41,9 +43,16 @@ public class UserRequestService {
         }
        Optional<UserRequest>  opt= userRequestRepo.findByBorrowerAndResource(Utill.getCurrentUser(),requestResource);
         if(opt.isPresent()) {
+
             if (opt.get().getRequestStatus().equals(RequestStatus.PENDING)) {
 
                 throw new IllegalStateException("Request already Sent");
+            }
+          List<TransactionRecordDto> records= transactionRecordService.getBorrowedRecords();
+            for(TransactionRecordDto dto: records) {
+                if (dto.getResource().getId() == requestResource.getResourceId() && dto.getTransactionStatus().equalsIgnoreCase("Active")){
+                    throw new IllegalStateException("Request already Sent");
+                }
             }
         }
         RequestType requestType ;
